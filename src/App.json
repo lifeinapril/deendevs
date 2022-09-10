@@ -1,0 +1,129 @@
+{
+"name":"Deen Developers",
+"sub":"Developers",
+"slogan":"We care about your data",
+"contacts":{
+    "phone":"+234 906 529 1086",
+    "email":"support@deendevelopers.ng",
+    "instagram":"deendevelopers.ng",
+    "twitter":"deendevelopers",
+    "facebook":"deendevelopers"
+},
+"jumbo":{
+        "title":"Developing for the future",
+        "body":"We are a software company passionate about building ecofriendly products and services that bring a positive impact on the world."
+},
+"cloud":{
+        "title":"Build smart apps on the cloud",
+        "body":"Explore deen cloud services and create smart apps that power your business and grow your business"
+},
+"partners":[
+        {   
+            "icon":"jt",
+            "name":"Just Talk",
+            "title":"Don't Text, Just Talk",
+            "body":"JustTalk is an audio space platform for podcasters and audio junkies, you can create interesting casts and connect with people in a different way and a streamed conversation",
+            "link":"https://Justtalkapp.com"
+        },
+        {   
+            "icon":"obic",
+            "title":"Trade cryptocurrency and other digital assets",
+            "name":"ObicTrade",
+            "body":"Obic brings crypto closer to you with ease of trades and trasaction with anyone with just a username and get updates from the digital market",
+            "link":"https://obictrade.com"
+        },
+        {   
+            "icon":"ilightct",
+            "name":"Ilight City",
+            "title":"Light up your space",
+            "body":"Ilight city is an interior design company with aesthetic services and sales of interior items such as Furnitures, fittings, finishes, wall murals, beddings, window treatment , carpets, clocks,mirrors, frames and arts works, vases and flowers..and the whats have you.",
+            "link":"https://ilight.city"
+        }
+],
+"approach":[
+    {
+        "title":"Discovery & Planning",
+        "body":"After the design has been frozen and the functional proof of concept has been accepted, our two offices work together under the supervision and leadership of your assigned project manager in order to deliver a seamlessly integrated professional website with both beauty and functionality"
+    },
+
+    {
+        "title":"Integration & Building",
+        "body":"Our extraordinary design skill coupled with a disciplined engineering process model distinguishes us from other design agencies. Our ideal job is to understand, create and cohesively manage all the dimensions, elements and components, which communicate your company’s image and objectives"
+    },
+    {
+        "title":"Delivery & Deployment",
+        "body":""
+    }
+ ],
+"services":[
+    {   
+        "title":"Understand your vision",
+        "body":"Based on your feedback, we iterate, polish, and adjust fire until you are completely satisfied, and your vision is realized. There is no limit to the design iterations. In the meantime, our “Left Brained” office works on any underlying programming, database design, or other technical requirements of the web application. We work hard to engineer the back-end so that it works efficiently and effectively. Our “Right Brained” office goes to work on the creative conceptualization of what the user interface should look like, and we present these concepts to you for feedback",
+        "section":"web",
+        "name":"UI/UX"
+    },
+    {   
+        "title":"Build your application",
+        "body":"Connect with your favourite apps in an intelligent way and use the power of AI to interact with them",
+        "section":"cloud",
+        "name":"Web / App Development"
+    },
+    {   
+        "title":"Grow your business",
+        "body":"Connect with your favourite apps in an intelligent way and use the power of AI to interact with them",
+        "section":"marketing",
+        "name":"Marketing:"
+    }
+],
+"content":[
+    {   
+        "title":"Grow your business, Make better decisions",
+        "body":"Companies build applications on the cloud to connect with customers and increase efficiency in workspace, we understand the most important factors that make a business achieve this goals"
+    }
+],
+"about":[
+    {   
+        "title":"We care about data",
+        "body":"We have a mission to organize data and make it accessible to anyone, anywhere and anytime."
+    },
+    {
+        "title":"Make you stand out",
+        "body":"We are skilled and experienced in online and offline branding strategies, positioning as well as web site design, search engine optimization, and online marketing management"
+    }
+],
+"products":[
+    {   
+        "body":"You can effectively verify users and handle customer support with AI assistant",
+        "title":"Identity and Authentication",
+        "name":"Maya"
+    },
+    {   
+        "body":"Get insight to user decisions, onboarding the right customers and fight fraud using data",
+        "title":"Automation and Analytics",
+        "name":"Grasp"
+    },
+    {   
+        "body":"Create guides and publish documentations of what people need to know about your product or services",
+        "title":"Documentation and Publication",
+        "name":"Republik"
+    }
+],
+"team":[
+    {   
+        "position":"Founder, CEO",
+        "name":"Abideen Adetugboboh"
+    },
+    {   
+        "position":"President",
+        "name":"Gideon Abel"
+    },
+    {   
+        "position":"V.President",
+        "name":"Tobi Ajisegbede"
+    },
+    {   
+        "position":"Head Secretary",
+        "name":"Iyasere Elizabeth"
+    }
+]
+}

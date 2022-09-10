@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+
+
+b,h1,h2 {
+   font-family: 'Comfortaa';
+}
+h3,h4,h5,h6{
+  font-family: "Work Sans"
+}
+
+.App {
+  text-align: center;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+  background: transparent !important;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.btn-dark{
+  background-color: black !important;
+}
+
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #fb617d;
+}
+
+
+
+.input-dark{
+  border:1px solid rgba(24, 24, 24, 0.874) !important;
+  background-color: rgba(39, 38, 38, 0.874) !important;
+  color: aliceblue !important;
+}
+
+
+

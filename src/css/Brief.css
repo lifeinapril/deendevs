@@ -1,0 +1,103 @@
+
+.brief{
+    min-height: 300px !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+.sec{
+    max-width: 380px !important;
+    margin: auto !important;
+    border-radius:20px !important;
+}
+.brief-round{
+    border-radius:20px !important;
+}
+
+
+.list-group-item-dark{
+    background-color: rgba(0, 0, 0, 0.104) !important;
+    /* background: linear-gradient(144deg, rgb(0, 0, 0) 0%, rgb(35, 5, 9) 47%, rgb(9, 2, 4) 100%); */
+    border: none !important;
+}
+
+.list-group-item{
+    color: #fff !important;
+}
+
+.brief-dark{
+    background-color: rgb(15, 15, 15);
+    /* background: linear-gradient(144deg, rgb(63, 3, 3) 0%, rgb(31, 7, 12) 47%, rgb(21, 4, 9) 100%); */
+    }
+
+  .brief-light{
+        background: #fff !important;
+        }
+            
+
+.brief-head{ 
+    font-size: 30px !important;
+}
+          
+
+.brief-icon{ 
+    font-size: 60px !important;
+    margin: 30px !important;
+}
+
+.text-left{
+    text-align: left !important;
+}
+.text-right{
+    text-align: right !important;
+}
+.text-center{
+    text-align: center !important;
+}
+
+.brief-body{ 
+    font-size: 15px !important;
+}
+
+.light,.light .icon{
+    color: #fff !important;
+}
+
+.dark,.dark .icon{
+    color: rgb(19, 17, 17) !important;
+}
+
+.padding{
+    padding: 45px !important;
+}
+
+.text-teal{
+    color: teal !important;
+}
+
+
+
+
+
+
+
+
+
+ .info-enter {
+    opacity: 0.01;
+  }
+  
+  .info-enter.info-enter-active {
+    opacity: 1;
+    transition: opacity 1000ms ease-in;
+  }
+  
+  .info-leave {
+    opacity: 1;
+  }
+  
+  .info-leave.info-leave-active {
+    opacity: 0.01;
+    transition: opacity 1000ms ease-in;
+  }
+  
+
