@@ -1,19 +1,20 @@
 
 .brief{
-    min-height: 300px !important;
     background-size: cover !important;
     background-position: center !important;
+    width: 100vw !important;
+    padding: 20px !important;
+    margin: 0px !important;
+}
+.container{
+    margin:0px !important;
+    width: 100vw !important;
 }
 .sec{
     max-width: 380px !important;
     margin: auto !important;
     border-radius:20px !important;
 }
-.brief-round{
-    border-radius:20px !important;
-}
-
-
 .list-group-item-dark{
     background-color: rgba(0, 0, 0, 0.104) !important;
     /* background: linear-gradient(144deg, rgb(0, 0, 0) 0%, rgb(35, 5, 9) 47%, rgb(9, 2, 4) 100%); */
@@ -25,8 +26,9 @@
 }
 
 .brief-dark{
-    background-color: rgb(15, 15, 15);
-    /* background: linear-gradient(144deg, rgb(63, 3, 3) 0%, rgb(31, 7, 12) 47%, rgb(21, 4, 9) 100%); */
+    background-color: rgba(15, 15, 15, 0.4);
+    -webkit-backdrop-filter:blur(20px);
+    backdrop-filter: blur(20px);
     }
 
   .brief-light{
@@ -35,7 +37,7 @@
             
 
 .brief-head{ 
-    font-size: 30px !important;
+    font-size: 40px !important;
 }
           
 

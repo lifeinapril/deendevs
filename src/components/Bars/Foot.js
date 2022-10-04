@@ -14,7 +14,8 @@ class Foot extends React.Component{
  
   return (
     <>
-      <Container fluid className={`${this.props.bg} text-left padding text-md-left`}>
+      <div  className={`${this.props.bg} text-left padding text-md-left`}>
+      <Container fluid>
         <Row>
           <Col xs={12} md={8}  className="text-center">
           <img
@@ -61,6 +62,7 @@ class Foot extends React.Component{
           </Col>
         </Row>
       </Container>
+      </div>
       <div className={this.props.bg + " footer-copyright text-center py-3"}>
         <Container fluid>
           &copy; {new Date().getFullYear()} Copyright: <a href="/"> {this.props.name} </a>

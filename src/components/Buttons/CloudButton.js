@@ -19,7 +19,7 @@ class CloudButton extends React.Component{
 
 return (
             <>
-            <Button as={Link} to='/auth' variant={this.props.variant} size='lg'>Open account&nbsp;<MayaIcon/></Button>
+            <Button as={Link} to='/auth' variant={this.props.variant} size='lg'>Create an account&nbsp;<MayaIcon/></Button>
             </>
 
 );

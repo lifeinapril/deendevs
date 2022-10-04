@@ -15,8 +15,8 @@ import "../../css/Animation.css";
 
 const Feature = (props) => {
 return (
-    <Container fluid className={props.bg}>
-    <Container>
+    <div className={props.bg}>
+    <Container fluid>
             <div className='text-center' style={{maxWidth:700,margin:"auto"}}>
                 <br/><br/>
                 <h1 className={props.variant}>{props.title}</h1>
@@ -46,7 +46,7 @@ return (
 
         <br/>
     </Container>
-    </Container>
+    </div>
 );
 };
 

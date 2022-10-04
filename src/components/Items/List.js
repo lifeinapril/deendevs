@@ -4,7 +4,6 @@ Stack,
 ListGroupItem
 } from 'react-bootstrap';
 import "../../css/Brief.css";
-import  { FcRating } from "react-icons/fc";
 import  { GrCode } from "react-icons/gr";
 
 
@@ -13,9 +12,9 @@ return (
 <>
             <Stack direction="vertical" gap={4}>
                         {
-                        props.items.map(function(item){
+                        props.items.map(function(item,key){
                             return (
-                                <ListGroupItem variant='dark' className="dark d-flex justify-content-between align-items-start" key={item}>
+                                <ListGroupItem variant='dark' className="dark d-flex justify-content-between align-items-start" key={key}>
                                     {item.icon ? item.icon:<GrCode />}
                                         <div className="ms-2 me-auto light">
                                             <div className="fw-bold light"> {item.title}</div>

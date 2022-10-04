@@ -4,7 +4,6 @@ import {
 Button,Offcanvas,Form,Alert
 } from 'react-bootstrap';
 import appicon from "../../logo.png";
-import ilightct from "../../App.json";
 import API from '../../API';
 
 function BookButton(props){
@@ -12,7 +11,6 @@ function BookButton(props){
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
-  const [service, selectService] = useState('');
   const [resBody, setBody] = useState({});
   
 
@@ -26,8 +24,7 @@ function BookButton(props){
                                 var data={
                                   full_name:name,
                                   phone:phone,
-                                  email:email,
-                                  service:service
+                                  email:email
                                 };
                                 API.post(`services/request`,data).then(res =>{
                                   console.log(res);
@@ -48,7 +45,7 @@ return (
 
 
 
-            <Button onClick={handleShow} variant="danger" href={props.path} size='lg'>Let's create</Button>
+            <Button onClick={handleShow} variant="light" href={props.path} size='lg'>Let's create</Button>
 
 
             <Offcanvas variant="dark" className="bg-grey" show={show} onHide={handleClose} placement="end">

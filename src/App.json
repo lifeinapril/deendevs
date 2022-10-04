@@ -1,11 +1,11 @@
 {
 "name":"Deen Developers",
 "sub":"Developers",
-"slogan":"We care about your data",
+"slogan":"We care about the security of your indentity and data",
 "contacts":{
     "phone":"+234 906 529 1086",
-    "email":"support@deendevelopers.ng",
-    "instagram":"deendevelopers.ng",
+    "email":"support@deendevs.com",
+    "instagram":"deendevs",
     "twitter":"deendevelopers",
     "facebook":"deendevelopers"
 },
@@ -79,6 +79,10 @@
     {   
         "title":"Grow your business, Make better decisions",
         "body":"Companies build applications on the cloud to connect with customers and increase efficiency in workspace, we understand the most important factors that make a business achieve this goals"
+    },
+    {   
+        "title":"Your Global Passport",
+        "body":"Create a deen cloud account today to take control of your life, authenticate access to your applications and secure your global identity"
     }
 ],
 "about":[
@@ -101,11 +105,6 @@
         "body":"Get insight to user decisions, onboarding the right customers and fight fraud using data",
         "title":"Automation and Analytics",
         "name":"Grasp"
-    },
-    {   
-        "body":"Create guides and publish documentations of what people need to know about your product or services",
-        "title":"Documentation and Publication",
-        "name":"Republik"
     }
 ],
 "team":[

@@ -1,13 +1,10 @@
 import React from 'react';
 import "../../css/Header.css";
-import demo from "../../Config";
 import {
-Navbar,NavDropdown,
+Navbar,
 Nav
 } from 'react-bootstrap';
-import Socials from '../Items/Social';
-import BookButton from '../Buttons/BookButton';
-import CloudButton from '../Buttons/CloudButton';
+import LoginButton from '../Buttons/LoginButton';
 
 class HeadBar extends React.Component{
   constructor(props) {
@@ -26,8 +23,8 @@ return (
                       <img
                         alt="logo"
                         src={this.props.icon}
-                        style={{height:28,margin:"auto"}}
-                      />&nbsp;<b className='red'>Deen</b> {this.props.name ? this.props.name:'Developers'}
+                        style={{height:28,margin:"auto",marginTop:-8}}
+                      />&nbsp;<b className='red'>DEEN</b> {this.props.name ? this.props.name:''}
             </>:null
               }
 
@@ -35,24 +32,25 @@ return (
             <Navbar.Toggle aria-controls="menu" />
             <Navbar.Collapse id="menu" className="justify-content-end">
               <Nav>
-                <Nav.Link href="/">&nbsp;Develop &nbsp;</Nav.Link>&nbsp;&nbsp;
+                <Nav.Link href="/">&nbsp;Home &nbsp;</Nav.Link>&nbsp;&nbsp;
+                <Nav.Link href="/develop">&nbsp;Develop &nbsp;</Nav.Link>&nbsp;&nbsp;
                 <Nav.Link href="/cloud">&nbsp;Cloud &nbsp;</Nav.Link>&nbsp;&nbsp;
-                <NavDropdown title="  Partners  " id="basic-nav-dropdown">
+                {/* <NavDropdown title="  Partners  " id="basic-nav-dropdown">
                   {
                   demo.partners.map(function(item,index){
                             return (
                               <NavDropdown.Item  key={index} href={"/#"+item.name}>&nbsp;&nbsp;{item.name}&nbsp;&nbsp;</NavDropdown.Item>
                             )
                   })
-                }
+                } */}
                   {/* <NavDropdown.Divider /> */}
-                </NavDropdown>&nbsp;&nbsp;
+                {/* </NavDropdown>&nbsp;&nbsp; */}
                 <Nav.Link href="/team">&nbsp;Our Team &nbsp;</Nav.Link>&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;
               </Nav>
               <Nav>
                 {/* <Socials/> */}
-                <CloudButton  variant="dark"/>
+                <LoginButton  variant="dark"/>
                 {this.props.tunnel ? 
                   this.props.tunnel:null
                     }

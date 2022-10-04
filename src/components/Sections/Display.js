@@ -10,11 +10,10 @@ import "../../css/Jumbo.css";
 
 const Display = (props) => {
 return (
-<Container fluid className='text-center light tint' style={{backgroundImage: `url(${props.image}`}}>
+ <div className='text-center light tint' style={{backgroundImage: `url(${props.image}`}}>
+<Container fluid>
 <br/>
 <br/>
-<br/>
-
         <h1 style={{fontSize:70}}>{props.title}</h1>
         <p>
         {props.body}
@@ -26,10 +25,9 @@ return (
                 }
         </p>
         <br/>
-        <br/>
 
 </Container>
-
+</div>
 );
 
 };
