@@ -1,5 +1,5 @@
 {
-"name":"Deen Developers",
+"name":"Deen Devs",
 "sub":"Developers",
 "slogan":"We care about the security of your indentity and data",
 "contacts":{
@@ -57,19 +57,19 @@
  ],
 "services":[
     {   
-        "title":"Understand your vision",
+        "title":"Spark Innovation",
         "body":"Based on your feedback, we iterate, polish, and adjust fire until you are completely satisfied, and your vision is realized. There is no limit to the design iterations. In the meantime, our “Left Brained” office works on any underlying programming, database design, or other technical requirements of the web application. We work hard to engineer the back-end so that it works efficiently and effectively. Our “Right Brained” office goes to work on the creative conceptualization of what the user interface should look like, and we present these concepts to you for feedback",
         "section":"web",
         "name":"UI/UX"
     },
     {   
-        "title":"Build your application",
+        "title":"Build Awesome Apps",
         "body":"Connect with your favourite apps in an intelligent way and use the power of AI to interact with them",
         "section":"cloud",
         "name":"Web / App Development"
     },
     {   
-        "title":"Grow your business",
+        "title":"Scale businesses",
         "body":"Connect with your favourite apps in an intelligent way and use the power of AI to interact with them",
         "section":"marketing",
         "name":"Marketing:"

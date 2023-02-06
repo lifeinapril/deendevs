@@ -23,8 +23,8 @@ return (
                       <img
                         alt="logo"
                         src={this.props.icon}
-                        style={{height:28,margin:"auto",marginTop:-8}}
-                      />&nbsp;<b className='red'>DEEN</b> {this.props.name ? this.props.name:''}
+                        style={{height:26,margin:"auto",marginTop:-8}}
+                      />&nbsp;<b className='red'>DEEN</b>DEVS
             </>:null
               }
 
@@ -33,8 +33,8 @@ return (
             <Navbar.Collapse id="menu" className="justify-content-end">
               <Nav>
                 <Nav.Link href="/">&nbsp;Home &nbsp;</Nav.Link>&nbsp;&nbsp;
-                <Nav.Link href="/develop">&nbsp;Develop &nbsp;</Nav.Link>&nbsp;&nbsp;
-                <Nav.Link href="/cloud">&nbsp;Cloud &nbsp;</Nav.Link>&nbsp;&nbsp;
+                <Nav.Link href="/services">&nbsp;Services &nbsp;</Nav.Link>&nbsp;&nbsp;
+                <Nav.Link href="/products">&nbsp;Products &nbsp;</Nav.Link>&nbsp;&nbsp;
                 {/* <NavDropdown title="  Partners  " id="basic-nav-dropdown">
                   {
                   demo.partners.map(function(item,index){

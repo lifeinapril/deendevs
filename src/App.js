@@ -24,9 +24,9 @@ return (
       <Route path='/auth' element={<Auth name={demo.name} icon={demo.icon}/>}/>
       <Route path='/team' element={<Team name={demo.name} icon={demo.icon}/>}/>
       <Route path='/approach' element={<Approach name={demo.name} icon={demo.icon}/>}/>
-      <Route path='/services' element={<Services name={demo.name} icon={demo.icon}/>}/>
-      <Route path='/cloud' element={<Cloud name={demo.name} icon={demo.icon}/>}/>
-      <Route path='/develop' element={<Devs name={demo.name} icon={demo.icon}/>}/>
+      <Route path='/services' element={<Devs name={demo.name} icon={demo.icon}/>}/>
+      <Route path='/products' element={<Cloud name={demo.name} icon={demo.icon}/>}/>
+      <Route path='/explore' element={<Devs name={demo.name} icon={demo.icon}/>}/>
       </Routes>
   </Router>
 </>
