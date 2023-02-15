@@ -9,7 +9,6 @@ import './App.css';
 import './css/Splash.css';
 import Team from './pages/Team';
 import Approach from './pages/Approach';
-import Services from './pages/Services';
 import Cloud from './pages/Cloud';
 import Auth from './pages/Auth';
 import Devs from './pages/Devs'
