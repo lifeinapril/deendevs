@@ -14,10 +14,10 @@ return (
 <br/><br/>
 <br/><br/>
 <br/><br/>
-        <p style={{maxWidth:"450px"}}>
-          <b style={{fontSize:50}}>{props.title}</b>
+        <p style={{maxWidth:"650px"}}>
+          <b style={{fontSize:45}}>{props.title}</b>
         </p>
-        <p style={{maxWidth:"380px"}}>
+        <p style={{maxWidth:"580px"}}>
          {props.body}
         </p>
           <br/>

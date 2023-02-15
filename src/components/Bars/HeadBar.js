@@ -33,7 +33,6 @@ return (
             <Navbar.Collapse id="menu" className="justify-content-end">
               <Nav>
                 <Nav.Link href="/">&nbsp;Home &nbsp;</Nav.Link>&nbsp;&nbsp;
-                <Nav.Link href="/services">&nbsp;Services &nbsp;</Nav.Link>&nbsp;&nbsp;
                 <Nav.Link href="/products">&nbsp;Products &nbsp;</Nav.Link>&nbsp;&nbsp;
                 {/* <NavDropdown title="  Partners  " id="basic-nav-dropdown">
                   {
@@ -45,7 +44,7 @@ return (
                 } */}
                   {/* <NavDropdown.Divider /> */}
                 {/* </NavDropdown>&nbsp;&nbsp; */}
-                <Nav.Link href="/team">&nbsp;Our Team &nbsp;</Nav.Link>&nbsp;&nbsp;
+                <Nav.Link href="/team">&nbsp;About Us &nbsp;</Nav.Link>&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;
               </Nav>
               <Nav>

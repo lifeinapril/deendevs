@@ -1,12 +1,17 @@
 import React from 'react';
 import HeadBar from '../components/Bars/HeadBar';
-import { Col, Container, Row } from 'react-bootstrap';
 import Foot from '../components/Bars/Foot';
 import demo from "../Config";
 import Brief from '../components/Sections/Brief';
 import Title from '../components/Sections/Title';
 import Feature from '../components/Sections/Feature';
 import Box from '../components/Items/Box';
+import Jumbo from '../components/Sections/Jumbo';
+
+import MoreButton from '../components/Buttons/MoreButton';
+import Display from '../components/Sections/Display';
+import Showcase from '../components/Sections/Showcase';
+import BookButton from '../components/Buttons/BookButton';
 
 
 class Team extends React.Component {
@@ -14,30 +19,24 @@ class Team extends React.Component {
         return (
             <>
             <HeadBar dark={true} name={demo.sub} icon={demo.icon}/>
-            <Title bg="bg-dark" variant="light" name="Our Team" body="Our executive leadership team averages 8 years of experience with cloud."/>
-            <br/>
-            <Container>
-            <Brief dark={false} data={demo.about[0]} linklist={
-                [
-                    {title:"Our products",link:""},
-                    {title:"What we do",link:""}
-                ]
-            } set="first" image={demo.about[0].image}/>
-            <Feature
-                            align="text-center"
-                            body="We make it possible" 
-                            bg="bg-light"
-                            variant="dark"
-                            items={
-                                demo.team.map(function(member,index){
-                                        return (
-                                            <Box key={index} title={member.name} body={member.position} image={member.image} />
-                                        )
-                                })
-                            } />
-
-            </Container>
-
+            <Jumbo image={demo.jumbo.image} variant="light" title={demo.jumbo.title} body={demo.jumbo.body} button={<BookButton/>}/>
+               <Feature
+                    align="text-center"
+                    title="What we do" 
+                    body="Our extraordinary design skill coupled with a disciplined engineering process model distinguishes us from other design agencies" 
+                    bg="bg-light"
+                    variant="dark"
+                    button={<MoreButton path="/services" />}
+                    items={
+                        demo.services.map(function(item,index){
+                                return (
+                                    <Box key={index} title={item.title} image={item.image} icon={item.icon} />
+                                )
+                        })
+                    } />
+                <Display image={demo.jumbo.image} variant="light" button={<BookButton/>} title="Let's Talk" body="We’re interested in taking your business to the cloud"/>
+            
+             
             <Foot contacts={demo.contacts} services={demo.services} bg="bg-dark" name={demo.name} icon={demo.icon}/>
            </>
         );

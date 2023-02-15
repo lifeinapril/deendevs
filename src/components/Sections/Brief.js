@@ -21,18 +21,24 @@ class Brief extends React.Component {
             backgroundSize: "cover",
             backgroundPosition: "center",
             minHeight:300,
-            padding:70
+            padding:10
         }
 
 return (
    
 <div style={this.props.full ? bg:null}>
-    <Container fluid>
+<br/>
+<br/>
+<br/>
+<br/>
+
+    <div>
         <Row className={this.props.align}>
-            <Col  xs={12} sm={12} md={{span:5,order: this.props.set }} className={ this.props.dark ? 'brief-dark brief-round padding':'brief-light brief-round  padding'}>
-                <br/><br/>
-          
-            <div ref={this.ref} className={"sec "+this.props.align}>      
+            <Col  xs={12} sm={12} md={{span:5,order: this.props.set }} className={ this.props.dark ? 'brief-dark':'brief-light'}>
+             <br/>
+             <br/>
+             <br/>
+            <div ref={this.ref} className='sec padding'>      
                 {
                 this.props.icon ? (<div className={'brief-icon '+ (this.props.dark ? 'light':'dark')}>{this.props.icon}</div>):null
                 }
@@ -64,15 +70,22 @@ return (
                 this.props.button ? this.props.button:null
                 }
                     
-                <br/>
-                <br/>
             </div>
             </Col>
 
-            <Col  xs={12} md={5} className={this.props.border ? `${this.props.border}`:null}  style={this.props.full ? null:bg}>
+            <Col  xs={this.props.full ? false:12} md={5} className={this.props.border ? `${this.props.border}`:null}  style={this.props.full ? null:bg}>
             </Col>
+
+            <br/>
+            <br/>
+
         </Row>  
-    </Container>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
 </div>
 );
             }

@@ -63,7 +63,11 @@ background-image: url("../logos/maya.png");
 
 
 .grasp{  
-    background-image: url("../logos/grasp.png");
+  background-image: url("../logos/grasp.png");
+}
+
+.qrletters{  
+    background-image: url("../logos/qr.png");
 }
 
 

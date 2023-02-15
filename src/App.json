@@ -11,11 +11,11 @@
 },
 "jumbo":{
         "title":"Developing for the future",
-        "body":"We are a software company passionate about building ecofriendly products and services that bring a positive impact on the world."
+        "body":" We believe that AI has the potential to transform the way we interact with technology, and our apps are just the beginning."
 },
 "cloud":{
-        "title":"Build smart apps on the cloud",
-        "body":"Explore deen cloud services and create smart apps that power your business and grow your business"
+        "title":"Bringing AI to Your Fingertips with Our Apps",
+        "body":"Our apps are designed to provide a seamless user experience by incorporating AI technology in ways that enhance functionality, increase efficiency, and simplify tasks."
 },
 "partners":[
         {   
@@ -77,12 +77,12 @@
 ],
 "content":[
     {   
-        "title":"Grow your business, Make better decisions",
+        "title":"Building the future with intelligent apps",
         "body":"Companies build applications on the cloud to connect with customers and increase efficiency in workspace, we understand the most important factors that make a business achieve this goals"
     },
     {   
-        "title":"Your Global Passport",
-        "body":"Create a deen cloud account today to take control of your life, authenticate access to your applications and secure your global identity"
+        "title":"Next-Level Apps with AI at the Core",
+        "body":"Create a deen cloud account today and have access to all our great products and services"
     }
 ],
 "about":[
@@ -97,14 +97,16 @@
 ],
 "products":[
     {   
-        "body":"You can effectively verify users and handle customer support with AI assistant",
-        "title":"Identity and Authentication",
+        "body":"It is designed to help users with a variety of tasks, from answering questions and providing information to completing specific actions or tasks.",
+        "title":"Here to help: Your Personal Chat Assistant",
+        "path":"maya",
         "name":"Maya"
     },
     {   
-        "body":"Get insight to user decisions, onboarding the right customers and fight fraud using data",
-        "title":"Automation and Analytics",
-        "name":"Grasp"
+        "body":"users can easily create a message, and generate a QR code. Recipients can then scan the code using their smartphone camera to instantly access the message.",
+        "title":"Say it with a QR: A Digital Love Letter to Cherish Forever",
+        "path":"qrletters",
+        "name":"QRLetters"
     }
 ],
 "team":[
