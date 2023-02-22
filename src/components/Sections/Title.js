@@ -2,14 +2,11 @@
 
 
 import React from 'react';
-import { Container } from 'react-bootstrap';
 
 const Title = (props) => {
 return (
     <>
     <div className={props.bg} style={{backgroundImage: `url(${props.image}`}}>
-    <Container fluid>
-        <br/>
             <div className={`text-${props.align ? props.align:"center"} padding`} style={{maxWidth:900,margin:"auto"}}>
                 <h2 className={props.variant}>{props.name}</h2>
                 <h6 className={props.variant}>
@@ -22,7 +19,6 @@ return (
                     props.button ? props.button:null
                     }
             </div>
-        </Container>
     </div>
     </>
 );

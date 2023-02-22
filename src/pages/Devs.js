@@ -16,11 +16,11 @@ class Devs extends React.Component {
   render() {
         return (
             <>
-            <HeadBar dark={false} name={demo.sub} icon={demo.icon}/>
+            <HeadBar dark={false} name={demo.sub} icon={demo.icon_white}/>
 
                 <Jumbo image={demo.jumbo.image} variant="light" title={demo.jumbo.title} body={demo.jumbo.body} button={<BookButton/>}/>
                             
-                <Brief dark={true} full={true} button={<MoreButton path="/cloud" />} data={demo.content[0]} list={demo.products} set="last" image={demo.content[0].image}/>
+                <Brief dark={true} full={true} button={<MoreButton path="/apps" />} data={demo.content[0]} list={demo.products} set="last" image={demo.content[0].image}/>
                         
                 <Feature
                     align="text-center"

@@ -16,15 +16,15 @@ class HeadBar extends React.Component{
  
 return (
 <>
-      <Navbar sticky="top" variant={this.props.dark ? "dark":"light"} expand="lg" className={this.props.dark ? 'bg-dark headbar justify-content-evenly':'bg-light headbar justify-content-evenly'}>
+      <Navbar sticky="top" variant={this.props.dark ? "dark":"light"} expand="lg" className={this.props.dark ? 'bg-red headbar justify-content-evenly':'bg-light headbar justify-content-evenly'}>
             <Navbar.Brand href="/">
             {this.props.icon ? 
             <>
                       <img
                         alt="logo"
                         src={this.props.icon}
-                        style={{height:26,margin:"auto",marginTop:-8}}
-                      />&nbsp;<b className='red'>DEEN</b>DEVS
+                        style={{height:50,margin:"auto",marginTop:0}}
+                      />&nbsp;<b><span className='dark'>DEEN</span>DEVS</b>
             </>:null
               }
 
@@ -33,7 +33,7 @@ return (
             <Navbar.Collapse id="menu" className="justify-content-end">
               <Nav>
                 <Nav.Link href="/">&nbsp;Home &nbsp;</Nav.Link>&nbsp;&nbsp;
-                <Nav.Link href="/products">&nbsp;Products &nbsp;</Nav.Link>&nbsp;&nbsp;
+                <Nav.Link href="/apps">&nbsp;Apps &nbsp;</Nav.Link>&nbsp;&nbsp;
                 {/* <NavDropdown title="  Partners  " id="basic-nav-dropdown">
                   {
                   demo.partners.map(function(item,index){

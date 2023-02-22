@@ -1,0 +1,16 @@
+
+.offcanvas{
+    padding: 5px !important;
+    width: 98% !important;
+}
+
+.form-control{
+    width: 96% !important;
+    margin: 0px !important;
+    float: left !important;
+}
+.form .btn{
+    float: left !important;
+    width: 96% !important;
+}
+

@@ -2,15 +2,12 @@ import React from 'react';
 import HeadBar from '../components/Bars/HeadBar';
 import Foot from '../components/Bars/Foot';
 import demo from "../Config";
-import Brief from '../components/Sections/Brief';
-import Title from '../components/Sections/Title';
 import Feature from '../components/Sections/Feature';
 import Box from '../components/Items/Box';
 import Jumbo from '../components/Sections/Jumbo';
 
 import MoreButton from '../components/Buttons/MoreButton';
 import Display from '../components/Sections/Display';
-import Showcase from '../components/Sections/Showcase';
 import BookButton from '../components/Buttons/BookButton';
 
 
@@ -18,7 +15,7 @@ class Team extends React.Component {
   render() {
         return (
             <>
-            <HeadBar dark={true} name={demo.sub} icon={demo.icon}/>
+            <HeadBar dark={true} name={demo.sub} icon={demo.icon_white}/>
             <Jumbo image={demo.jumbo.image} variant="light" title={demo.jumbo.title} body={demo.jumbo.body} button={<BookButton/>}/>
                <Feature
                     align="text-center"

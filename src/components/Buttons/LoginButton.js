@@ -18,7 +18,7 @@ class LoginButton extends React.Component{
 
 return (
             <>
-            <Button as={Link} to={this.state.path} variant="red" size='lg'>Login / Register</Button>
+            <Button as={Link} to="/auth" variant="yellow" size='lg'>Login / Register</Button>
             </>
 
 );

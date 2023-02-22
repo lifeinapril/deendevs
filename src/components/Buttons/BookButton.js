@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import "../../css/Buttons.css";
+import "../../css/Offcanvas.css";
 import {
 Button,Offcanvas,Form,Alert
 } from 'react-bootstrap';
@@ -53,43 +54,32 @@ return (
                 </Offcanvas.Header>
                 <Offcanvas.Body>
 
-                <div className='text-center padding'>
+                <div className='text-center'>
                             <img
                         alt="logo"
                         src={appicon}
-                        style={{height:30}}
+                        style={{height:80}}
                         className="d-inline-block align-top"
                       />
                       <br/>
                       <br/>
-                            <small>Deen developers brings intelligence to your business with the power of AI, We would create an engineering team all on a friendly budget</small>
-                          </div>
-
+                      <small>Deen developers brings intelligence to your business with the power of AI, We would create an engineering team all on a friendly budget</small>
+                </div>
+                  <br/>
                 <Form onSubmit={e => {sendrequest(e)}}>
                       
-                      <Form.Group className="mb-3">
+                      <Form.Group>
                         <Form.Label>Company name:</Form.Label>
                         <Form.Control type="text" name='name' value={name} onChange={e => setName(e.target.value)} placeholder="Company name" />
                       </Form.Group>
 
-
-<Form.Group>
+                        <br/>
+                      <Form.Group>
                         <Form.Label>What is your project solving:</Form.Label>
-  <Form.Control as="textarea" aria-label="With textarea" />
-</Form.Group>
-<br/>
-<hr/>
-                      {/* <Form.Group className="mb-3">
-                        <Form.Label>Select a service</Form.Label>
-                          {
-                              ilightct.services.map(function(Item,Key){
-                                    return( 
-                                    <Form.Check type="checkbox" key={Key} label={Item.title} name='service' onChange={e => selectService(e.target.value)}/>
-                                     )
-                              })
-                          }
-                      </Form.Group> */}
-
+                        <Form.Control as="textarea" aria-label="With textarea" />
+                      </Form.Group>
+                      <br/>
+                      <hr/>
 
                       <Form.Group className="mb-3">
                         <Form.Label>Your name</Form.Label>
@@ -108,8 +98,6 @@ return (
                           We'll never share your email/phone number with anyone else.
                         </Form.Text>
                       </Form.Group>
-
-
 
                       <br/>
                       <Button disabled={Loading} variant="dark" size='lg' style={{width:"100%"}} type="submit">

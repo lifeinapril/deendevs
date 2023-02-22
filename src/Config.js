@@ -7,10 +7,11 @@ import partner3 from "./images/ilightct.jpeg";
 import {FcIdea,FcCircuit,FcBullish} from "react-icons/fc";
 import product1 from "./images/mybg.png";
 import product2 from "./images/qrletters.png";
-import jumbo from "./images/jumbo2.jpg";
+import jumbo from "./images/maya6.jpeg";
 import cloud from "./images/jumbo3.jpg";
 import m1 from "./images/middle.jpeg";
 import appicon from "./images/icon.png";
+import appicon2 from "./images/white.png";
 import deen from "./App.json";
 import Icon from "./components/Items/Icon";
 import member0 from "./images/data.jpeg";
@@ -22,6 +23,7 @@ import approach1 from "./images/approach1.png";
 
 
 deen.icon=appicon;
+deen.icon_white=appicon2;
 deen.jumbo.image=jumbo;
 deen.cloud.image=cloud;
 deen.images=[m1];

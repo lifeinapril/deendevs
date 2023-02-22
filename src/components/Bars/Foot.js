@@ -64,9 +64,7 @@ class Foot extends React.Component{
       </Container>
       </div>
       <div className={this.props.bg + " footer-copyright text-center py-3"}>
-        <Container fluid>
           &copy; {new Date().getFullYear()} Copyright: <a href="/"> {this.props.name} </a>
-        </Container>
       </div>
     </>
   );

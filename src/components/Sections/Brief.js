@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-Container,
 Row,
 Col
 } from 'react-bootstrap';
@@ -35,8 +34,6 @@ return (
     <div>
         <Row className={this.props.align}>
             <Col  xs={12} sm={12} md={{span:5,order: this.props.set }} className={ this.props.dark ? 'brief-dark':'brief-light'}>
-             <br/>
-             <br/>
              <br/>
             <div ref={this.ref} className='sec padding'>      
                 {
@@ -76,8 +73,6 @@ return (
             <Col  xs={this.props.full ? false:12} md={5} className={this.props.border ? `${this.props.border}`:null}  style={this.props.full ? null:bg}>
             </Col>
 
-            <br/>
-            <br/>
 
         </Row>  
     </div>

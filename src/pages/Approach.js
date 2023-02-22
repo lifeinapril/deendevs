@@ -1,6 +1,6 @@
 import React from 'react';
 import HeadBar from '../components/Bars/HeadBar';
-import { Col, Container, Row } from 'react-bootstrap';
+import {Container} from 'react-bootstrap';
 import Foot from '../components/Bars/Foot';
 import demo from "../Config";
 import Brief from '../components/Sections/Brief';
@@ -11,7 +11,7 @@ class Approach extends React.Component {
   render() {
         return (
             <>
-            <HeadBar dark={this.props.dark} name={demo.sub} icon={demo.icon}/>
+            <HeadBar dark={this.props.dark} name={demo.sub} icon={demo.icon_white}/>
             <Title bg="bg-dark text-left" variant="light" name="Our approach"/>
             <br/>
             <Container>

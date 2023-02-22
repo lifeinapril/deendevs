@@ -11,7 +11,7 @@ class Services extends React.Component {
   render() {
         return (
             <>
-            <HeadBar dark={this.props.dark}name={demo.sub} icon={demo.icon}/>
+            <HeadBar dark={this.props.dark}name={demo.sub} icon={demo.icon_white}/>
             <Title bg="bg-dark text-left" variant="light" name="What we do?"/>
             <Container className="bg-grey">
                 <br/>
