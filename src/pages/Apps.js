@@ -21,7 +21,7 @@ class Cloud extends React.Component {
                     items={
                         demo.products.map(function(item,index){
                                 return (
-                                    <Box key={index} title={item.name} body={item.body} button={<AppButton path={"/"+item.path} title="Open" />} icon={item.icon} />
+                                    <Box key={index} title={item.name} body={item.body} button={<AppButton path={"/"+item.path} title="Try it out" />} icon={item.icon} />
                                 )
                         })
                     } />

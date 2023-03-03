@@ -17,7 +17,7 @@ class AppButton extends React.Component{
 
 return (
             // <Link to={this.props.path}>
-             <Button variant='red' as={Link} target="_blank" to={this.props.path || this.props.path.to} state={this.props.path.state ? this.props.path.state:null} size='md'>{this.props.title ? this.props.title:"Learn More"}</Button>
+             <Button variant='light' as={Link} target="_blank" to={this.props.path || this.props.path.to} state={this.props.path.state ? this.props.path.state:null} size='md'>{this.props.title ? this.props.title:"Learn More"}</Button>
             // </Link>
 
 );
