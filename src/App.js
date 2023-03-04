@@ -11,10 +11,15 @@ import Team from './pages/Team';
 import Apps from './pages/Apps';
 import Auth from './pages/Auth';
 import Splash from './components/Sections/Splash';
+import ReactGA from 'react-ga';
+const TRACKING_ID = "UA-198127599-1"; // OUR_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
+
 
 const App = function(props){
   const [isLoading,setLoader] = useState(true);
     useEffect(()=>{
+        ReactGA.pageview(window.location.pathname + window.location.search);
       setTimeout(() =>{
         setLoader(false);
       },4000);
