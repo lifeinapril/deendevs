@@ -8,7 +8,7 @@ import LoginButton from '../Buttons/LoginButton';
 import Profile from '../Items/Profile';
 import demo from '../../Config';
 
-function HeadBar(){
+function HeadBar(props){
   const [user , setUser ] = useState(null);
   useEffect(() => {
                 const account = localStorage.getItem('account');
@@ -32,13 +32,13 @@ function HeadBar(){
  
 return (
 <>
-      <Navbar sticky="top" variant={this.props.dark ? "dark":"light"} expand="lg" className={this.props.dark ? 'bg-red headbar justify-content-evenly':'bg-light headbar justify-content-evenly'}>
+      <Navbar sticky="top" variant={props.dark ? "dark":"light"} expand="lg" className={props.dark ? 'bg-red headbar justify-content-evenly':'bg-light headbar justify-content-evenly'}>
             <Navbar.Brand href="/">
-            {this.props.icon ? 
+            {props.icon ? 
             <>
                       <img
                         alt="logo"
-                        src={this.props.icon}
+                        src={props.icon}
                         style={{height:50,margin:"auto",marginTop:0}}
                       />&nbsp;<b><span className='dark'>DEEN</span>DEVS</b>
             </>:null
