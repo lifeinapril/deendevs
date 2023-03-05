@@ -1,10 +1,57 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import demo from "../Config";
-import { Col,Row } from 'react-bootstrap';
-
+import { useNavigate,useLocation } from 'react-router-dom';
+import { Col,Row,Button,Spinner,Form } from 'react-bootstrap';
 import "../css/Auth.css";
 
 function Auth(props) {
+    const { search } = useLocation();
+    const navigate = useNavigate();
+    const [email, setEmail] = useState('');
+    const [password, setPass] = useState('');
+    const [isLoading, startLoader] = useState(false);
+    const params = new URLSearchParams(search);
+    const callback = params.get('callback');
+      useEffect(() => {
+        const account = localStorage.getItem('account');
+        if(account){
+            if(callback){
+                navigate(callback+account);
+             }else{
+                navigate("/");
+            }
+         }
+}, []);
+    var Login = (e) => {
+        e.preventDefault();
+        if(email && password){
+            startLoader(true);
+            fetch(demo.api+'user/login',{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({ email: email, password: password })
+                }).then(response => response.json())
+                .then((Data) => {
+                    startLoader(false);
+                    if(Data.success){
+                        localStorage.setItem('account',Data.data);
+                        if(callback){
+                           navigate(callback+Data.data);
+                        }else{
+                           navigate("/");
+                        }
+                    }
+                })
+                .catch((err) => {
+                console.log(err.message);
+                });
+        }
+     };
+
+     
+
   return (
     <>
     <br/>
@@ -16,10 +63,8 @@ function Auth(props) {
                                 </Col>
                                 <Col md={6} lg={6} sm={12} xs={12}>  
 
-
-
                                         <div className="Auth-form-container">
-                                        <form className="Auth-form">
+                                        <Form className="Auth-form" onSubmit={Login}>
                                             <div className="Auth-form-content">
                                             <img
                                                 alt="logo"
@@ -32,32 +77,38 @@ function Auth(props) {
 
                                             <div className="form-group mt-3">
                                                 <label>Email address</label>
-                                                <input type="email" className="form-control mt-1" placeholder="Enter email"/>
+                                                <Form.Control type="email" className="form-control mt-1" disabled={isLoading} value={email} onChange={e => setEmail(e.target.value)} placeholder="Enter email"/>
                                             </div>
                                             <br/>
                                             <br/>
                                             <div className="form-group mt-3">
                                                 <label>Password</label>
-                                                <input type="password" className="form-control mt-1" placeholder="Enter password"/>
+                                                <Form.Control type="password" className="form-control mt-1" disabled={isLoading} value={password} onChange={e => setPass(e.target.value)} placeholder="Enter password"/>
                                             </div>
                                             <p className="forgot-password text-right mt-2">
                                                 Forgot <a href="/password/reset">password?</a>
                                             </p>
                                             <br/>
                                             <div className="form-group mt-3">
-                                                <button style={{width:"95%"}} type="submit" className="btn btn-lg btn-dark">
-                                                Login
-                                                </button>
+                                                <Button disabled={isLoading || (!email && !password)} variant="clear" type="submit" size='lg'>
+                                                {isLoading ? (
+                                                        <Spinner  as="span"
+                                                        animation="border"
+                                                        size="sm"
+                                                        role="status"
+                                                        aria-hidden="true" variant="danger" />
+                                                ) : 'Login'}
+                                                </Button>
                                             </div>
                                             <br/>
                                             </div>
-                                            <div className="text-center">
-                                                Not registered yet?{" "}
-                                                <span className="link-primary">
+                                        </Form>
+                                        <div className="text-center">
+                                                Not registered yet? 
+                                                <a href="/register" className="link-primary">
                                                 Sign Up
-                                                </span>
+                                                </a>
                                             </div>
-                                        </form>
                                         </div>
 
 

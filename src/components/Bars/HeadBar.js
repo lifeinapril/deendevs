@@ -1,18 +1,34 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import "../../css/Header.css";
 import {
 Navbar,
 Nav
 } from 'react-bootstrap';
 import LoginButton from '../Buttons/LoginButton';
+import Profile from '../Items/Profile';
+import demo from '../../Config';
 
-class HeadBar extends React.Component{
-  constructor(props) {
-    super();
-  }
-
-  render(){
-
+function HeadBar(){
+  const [user , setUser ] = useState(null);
+  useEffect(() => {
+                const account = localStorage.getItem('account');
+                if(account){
+                    fetch(demo.api+'user/info/'+account,{
+                      method: 'GET',
+                      headers: {
+                          'Content-Type': 'application/json'
+                        }
+                      }).then(response => response.json())
+                      .then((Data) => {
+                          if(Data.success){
+                            setUser(Data.data);
+                          }
+                      })
+                      .catch((err) => {
+                      console.log(err.message);
+                      });
+                }
+}, []);
  
 return (
 <>
@@ -34,34 +50,19 @@ return (
               <Nav>
                 <Nav.Link href="/">&nbsp;Home &nbsp;</Nav.Link>&nbsp;&nbsp;
                 <Nav.Link href="/apps">&nbsp;Apps &nbsp;</Nav.Link>&nbsp;&nbsp;
-                {/* <NavDropdown title="  Partners  " id="basic-nav-dropdown">
-                  {
-                  demo.partners.map(function(item,index){
-                            return (
-                              <NavDropdown.Item  key={index} href={"/#"+item.name}>&nbsp;&nbsp;{item.name}&nbsp;&nbsp;</NavDropdown.Item>
-                            )
-                  })
-                } */}
-                  {/* <NavDropdown.Divider /> */}
-                {/* </NavDropdown>&nbsp;&nbsp; */}
                 <Nav.Link href="/team">&nbsp;About Us &nbsp;</Nav.Link>&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;
               </Nav>
               <Nav>
-                {/* <Socials/> */}
-                <LoginButton  variant="dark"/>
-                {this.props.tunnel ? 
-                  this.props.tunnel:null
-                    }
+                {user ? 
+                <Profile image={demo.media+user.photo} name={user.first_name}/>:
+                <LoginButton/>}
               </Nav>
             </Navbar.Collapse>
             
       </Navbar>
     </>
-
-);
-
-  }
+)
 
 };
 
