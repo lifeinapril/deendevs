@@ -16,7 +16,7 @@ class Team extends React.Component {
         return (
             <>
             <HeadBar dark={true} name={demo.sub} icon={demo.icon_white}/>
-            <Jumbo image={demo.jumbo.image} variant="light" title={demo.jumbo.title} body={demo.jumbo.body} button={<BookButton/>}/>
+            <Jumbo image={demo.jumbo.image} variant="light" title={demo.jumbo.title} body={demo.jumbo.body}/>
                <Feature
                     align="text-center"
                     title="What we do" 

@@ -9,10 +9,20 @@ function Auth(props) {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPass] = useState('');
+    const [error, setError] = useState('');
     const [isLoading, startLoader] = useState(false);
     const params = new URLSearchParams(search);
     const callback = params.get('callback');
+
+
       useEffect(() => {
+
+    window.gapi.load('auth2', function() {
+        window.gapi.auth2.init({
+          client_id: '609843450228-sit635nrrbcqbi1ql68gkjluiohn4055.apps.googleusercontent.com',
+        });
+      });
+      
         const account = localStorage.getItem('account');
         if(account){
             if(callback){
@@ -42,15 +52,24 @@ function Auth(props) {
                         }else{
                            navigate("/");
                         }
+                    }else{
+                        setError(Data.message);
                     }
                 })
                 .catch((err) => {
+                    startLoader(false);
                 console.log(err.message);
                 });
         }
      };
 
-     
+     function onSignIn(googleUser) {
+            const p = googleUser.getBasicProfile();
+            console.log('ID: ' + p.getId()); // Do not send to your backend! Use an ID token instead.
+            console.log('Name: ' + p.getName());
+            console.log('Image URL: ' + p.getImageUrl());
+            console.log('Email: ' + p.getEmail()); // This is null if the 'email' scope is not present.
+            }
 
   return (
     <>
@@ -64,14 +83,15 @@ function Auth(props) {
                                 <Col md={6} lg={6} sm={12} xs={12}>  
                                     <div className="Auth-form">
                                         <Form onSubmit={Login}>
-                                           <a href="/"> <img
+                                           <img
                                                 alt="logo"
                                                 src={demo.icon}
                                                 style={{height:58,margin:"auto"}}
-                                            /></a>
+                                            />
                                             <br/>
                                             <h3><b>Sign In</b></h3>
                                             <h5>Not registered yet? <a href="/register" className="link-primary"> Sign Up</a></h5>
+                                            {error ? <e>{error}</e>:null}
                                             <Form.Group className="mb-3">
                                                 <Form.Label>Email</Form.Label>
                                                 <Form.Control type="email" className="form-control mt-1" disabled={isLoading} value={email} onChange={e => setEmail(e.target.value)} placeholder="Enter email"/>
@@ -95,7 +115,13 @@ function Auth(props) {
                                             </Button>
                                             </Form.Group>
                                         </Form>
+
+                                        <button className="loginBtn loginBtn--google" onClick={() => window.gapi.auth2.getAuthInstance().signIn()}>
+                                                    Continue with Google
+                                                </button>
+
                                         <div className="text-center padding">
+
                                                 <p className="forgot-password">
                                                 Forgot password? <a href="/password/reset" className="link-primary">click here</a>
                                                 </p>
