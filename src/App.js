@@ -33,6 +33,7 @@ return (
   <Router>
       <Routes>
       <Route path='/' element={<Home icon={demo.icon}/>}/>
+      <Route path='/:token' element={<Home icon={demo.icon}/>}/>
       <Route path='/auth' element={<Auth name={demo.name} icon={demo.icon}/>}/>
       <Route path='/auth/:callback' element={<Auth name={demo.name} icon={demo.icon}/>}/>
       <Route path='/team' element={<Team name={demo.name} icon={demo.icon}/>}/>

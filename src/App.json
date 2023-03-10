@@ -2,6 +2,9 @@
 "name":"Deen Devs",
 "sub":"Developers",
 "slogan":"We care about the security of your indentity and data",
+"api":"https://deendevs.com/api/",
+"authurl":"https://deendevs.com/auth?callback=https://deendevs.com/",
+"token":"",
 "contacts":{
     "phone":"+234 906 529 1086",
     "email":"support@deendevs.com",
