@@ -12,6 +12,7 @@ import Apps from './pages/Apps';
 import Auth from './pages/Auth';
 import Splash from './components/Sections/Splash';
 import ReactGA from 'react-ga';
+import ChangePassword from './pages/ChangePassword';
 const TRACKING_ID = "UA-198127599-1"; // OUR_TRACKING_ID
 ReactGA.initialize(TRACKING_ID);
 
@@ -62,6 +63,7 @@ return (
       <Route path='/auth/:callback' element={<Auth name={demo.name} icon={demo.icon}/>}/>
       <Route path='/' element={<Home user={user} icon={demo.icon}/>}/>
       <Route path='/:token' element={<Home user={user} icon={demo.icon}/>}/>
+      <Route path='/reset/:token' element={<ChangePassword/>}/>
       <Route path='/team' element={<Team user={user} name={demo.name} icon={demo.icon}/>}/>
       <Route path='/apps' element={<Apps user={user} name={demo.name} icon={demo.icon}/>}/>
       </Routes>

@@ -4,12 +4,14 @@ import { Col,Row} from 'react-bootstrap';
 import "../css/Auth.css";
 import Login from "./Login";
 import Register from "./Register";
+import Reset from "./Reset";
 
 function Auth() {
-    const [loginAuth, setAuth] = useState(true);
+  const [AuthPage, setAuth] = useState("login");
     const { search } = useLocation();
     const params = new URLSearchParams(search);
     const callback = params.get('callback');
+    const state = params.get('state');
     const navigate = useNavigate();
 
       useEffect(() => {
@@ -21,11 +23,14 @@ function Auth() {
         });
         }
         const account = localStorage.getItem('account');
-        if(account){
-          console.log(account);
-        localStorage.removeItem('account');
+          if(state){
+            setAuth(state);
+          }
+          if(account){
             if(callback){
-                navigate(callback+account);
+              const url=callback+account;
+              console.log(url);
+                navigate(url);
              }else{
                 navigate("/");
             }
@@ -51,7 +56,9 @@ function Auth() {
                                 <Col md={3} lg={3} sm={false} xs={false}>  
                                 </Col>
                                 <Col md={6} lg={6} sm={12} xs={12}>  
-                                  {loginAuth ? <Login Auth={setAuth} googleAuth={onSignIn}/>:<Register  Auth={setAuth} googleAuth={onSignIn}/>}  
+                                  {AuthPage==="login" ? <Login Auth={setAuth} googleAuth={onSignIn}/>:null} 
+                                  {AuthPage==="register" ? <Register  Auth={setAuth} googleAuth={onSignIn} />:null}
+                                  {AuthPage==="reset" ? <Reset  Auth={setAuth} googleAuth={onSignIn} />:null}
                                   </Col> 
                                 <Col md={2} lg={2} sm={false} xs={false}>  
                                 </Col>

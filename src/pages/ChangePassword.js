@@ -1,31 +1,28 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
+import { useNavigate,useLocation, useParams } from 'react-router-dom';
 import demo from "../Config";
-import { Button,Spinner,Form} from 'react-bootstrap';
+import { Col,Row, Button,Spinner,Form} from 'react-bootstrap';
 import "../css/Auth.css";
 
-function Login(props) {
-    const [email, setEmail] = useState('');
+function ChangePassword(props) {
+    const {token}=useParams();
     const [password, setPass] = useState('');
+    const [retypepassword, retypePass] = useState('');
     const [error, setError] = useState('');
     const [isLoading, startLoader] = useState(false);
+    const navigate = useNavigate();
 
-
-
-    var auth = (value) => {
-        props.Auth(value);
-    }
-
-    var login = (e) => {
+    var changePass= (e) => {
         e.preventDefault();
-        if(email && password){
+        if(password===retypepassword){
             startLoader(true);
-            fetch(demo.api+'user/login',{
+            fetch(demo.api+'user/update',{
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                   },
-                  body: JSON.stringify({ email: email, password: password })
+                  body: JSON.stringify({token:token, password: password })
                 }).then(response => response.json())
                 .then((Data) => {
                     startLoader(false);
@@ -33,73 +30,79 @@ function Login(props) {
                     if(Data.success){
                         localStorage.setItem('account',Data.token);
                         setTimeout(function(){
-                            window.location.reload();
+                            navigate("/");
                         },1000);
                     }else{
                         setError(Data.message);
+                        setTimeout(function(){
+                            navigate("/");
+                        },2000);
                     }
                 })
                 .catch((err) => {
                     startLoader(false);
                 console.log(err.message);
                 });
+        }else{
+            setError("password does not match!");
         }
      };
 
 
   return (
     <>
+    <br/>
+    <br/>
+
+    <Row>
+        <Col md={3} lg={3} sm={false} xs={false}>  
+        </Col>
+        <Col md={6} lg={6} sm={12} xs={12}>  
      <div className="Auth-form">
-        <Form onSubmit={login}>
+        <Form onSubmit={changePass}>
             <img
                 alt="logo"
                 src={demo.icon}
                 style={{height:58,margin:"auto"}}
             />
             <br/>
-            <h3><b>Sign In</b></h3>
-            <h5>Not registered yet? <a onClick={() => auth("register")} className="link-primary"> Sign Up</a></h5>
+            <h3><b>Reset Passord</b></h3>
+            <h5></h5>
            
             {error ? <small style={{color:"red"}}>{error}</small>:null}
             <Form.Group className="mb-3">
-                <Form.Label>Email</Form.Label>
-                <Form.Control type="email" className="form-control mt-1" disabled={isLoading} value={email} onChange={e => setEmail(e.target.value)} placeholder="Enter email"/>
-            </Form.Group>
-            <br/>
-            <Form.Group className="mb-3">
-                <Form.Label>Password</Form.Label>
+                <Form.Label>New Password</Form.Label>
                 <Form.Control type="password" className="form-control mt-1" disabled={isLoading} value={password} onChange={e => setPass(e.target.value)} placeholder="Enter password"/>
             </Form.Group>
             <br/>
-            <br/>
+
             <Form.Group className="mb-3">
-            <Button disabled={isLoading || (!email && !password)} variant="dark" type="submit" size='lg' style={{width:"95%"}}>
+                <Form.Label>Retype Password</Form.Label>
+                <Form.Control type="password" className="form-control mt-1" disabled={isLoading} value={retypepassword} onChange={e => retypePass(e.target.value)} placeholder="Enter password"/>
+            </Form.Group>
+          
+            <Form.Group className="mb-3">
+            <Button disabled={isLoading || !retypepassword || !password} variant="dark" type="submit" size='lg' style={{width:"95%"}}>
                 {isLoading ? (
                         <Spinner  as="span"
                         animation="border"
                         size="sm"
                         role="status"
                         aria-hidden="true" variant="light" />
-                ) : 'Login'}
+                ) : 'Confirm'}
             </Button>
             </Form.Group>
         </Form>
-
-        <button className="loginBtn loginBtn--google" onClick={() => window.gapi.auth2.getAuthInstance().signIn()}>
-                    Continue with Google
-                </button>
-
-        <div className="text-center padding">
-
-                <p className="forgot-password">
-                Forgot password? <a onClick={() => auth("reset")}  className="link-primary">click here</a>
-                </p>
-        </div>
     </div>
+    </Col>
+    <Col md={2} lg={2} sm={false} xs={false}>  
+    </Col>
+   </Row>
+
                   
     </>
   )
 }
 
 
-export default Login;
+export default ChangePassword;

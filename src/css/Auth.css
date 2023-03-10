@@ -5,7 +5,11 @@ padding: 10px !important;
 }
 
 
-
+.form-control{
+width: 100% !important;
+margin: 0px !important;
+margin-bottom: 15px !important;
+}
 .loginBtn {
     box-sizing: border-box;
     position: relative;
@@ -23,7 +27,9 @@ padding: 10px !important;
     cursor: pointer;
     width: 100% !important;
   }
-  
+  a{
+    cursor: pointer;
+  }
   .loginBtn:before {
     content: "";
     box-sizing: border-box;
