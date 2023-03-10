@@ -17,12 +17,38 @@ ReactGA.initialize(TRACKING_ID);
 
 
 const App = function(props){
+  const [user , setUser ] = useState(null);
   const [isLoading,setLoader] = useState(true);
     useEffect(()=>{
         ReactGA.pageview(window.location.pathname + window.location.search);
       setTimeout(() =>{
         setLoader(false);
       },4000);
+
+    const account = localStorage.getItem('account');
+    if(account){
+      fetch(demo.api+'user/info',{
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'token': account,
+            'appid': demo.token
+          },
+          body: JSON.stringify({ token: account })
+        }).then(response => response.json())
+        .then((Data) => {
+          console.log("user:");
+          console.log(Data);
+            if(Data.success){
+              setUser(Data.data);
+            }else{
+              setUser(null);
+            }
+        })
+        .catch((err) => {
+        console.log(err.message);
+        });
+      }
     }, []);
 
 return (
@@ -32,12 +58,12 @@ return (
    :
   <Router>
       <Routes>
-      <Route path='/' element={<Home icon={demo.icon}/>}/>
-      <Route path='/:token' element={<Home icon={demo.icon}/>}/>
       <Route path='/auth' element={<Auth name={demo.name} icon={demo.icon}/>}/>
       <Route path='/auth/:callback' element={<Auth name={demo.name} icon={demo.icon}/>}/>
-      <Route path='/team' element={<Team name={demo.name} icon={demo.icon}/>}/>
-      <Route path='/apps' element={<Apps name={demo.name} icon={demo.icon}/>}/>
+      <Route path='/' element={<Home user={user} icon={demo.icon}/>}/>
+      <Route path='/:token' element={<Home user={user} icon={demo.icon}/>}/>
+      <Route path='/team' element={<Team user={user} name={demo.name} icon={demo.icon}/>}/>
+      <Route path='/apps' element={<Apps user={user} name={demo.name} icon={demo.icon}/>}/>
       </Routes>
   </Router>
 }

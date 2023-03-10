@@ -28,8 +28,9 @@ function Register(props) {
                 }).then(response => response.json())
                 .then((Data) => {
                     startLoader(false);
+                    console.log(Data);
                     if(Data.success){
-                        localStorage.setItem('account',Data.data);
+                        localStorage.setItem('account',Data.token);
                         setTimeout(function(){
                             window.location.reload();
                         },1000);

@@ -22,6 +22,8 @@ function Auth() {
         }
         const account = localStorage.getItem('account');
         if(account){
+          console.log(account);
+        localStorage.removeItem('account');
             if(callback){
                 navigate(callback+account);
              }else{

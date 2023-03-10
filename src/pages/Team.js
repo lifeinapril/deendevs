@@ -11,11 +11,10 @@ import Display from '../components/Sections/Display';
 import BookButton from '../components/Buttons/BookButton';
 
 
-class Team extends React.Component {
-  render() {
+function Team(props) {
         return (
             <>
-            <HeadBar dark={true} name={demo.sub} icon={demo.icon_white}/>
+            <HeadBar dark={true} user={props.user} icon={demo.icon_white}/>
             <Jumbo image={demo.jumbo.image} variant="light" title={demo.jumbo.title} body={demo.jumbo.body}/>
                <Feature
                     align="text-center"
@@ -37,8 +36,6 @@ class Team extends React.Component {
             <Foot contacts={demo.contacts} services={demo.services} bg="bg-dark" name={demo.name} icon={demo.icon}/>
            </>
         );
-    }
-
 }
 
 export default Team;

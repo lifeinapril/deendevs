@@ -1,4 +1,3 @@
-import React,{useState,useEffect} from 'react';
 import "../../css/Header.css";
 import {
 Navbar,
@@ -9,26 +8,6 @@ import Profile from '../Items/Profile';
 import demo from '../../Config';
 
 function HeadBar(props){
-  const [user , setUser ] = useState(null);
-  useEffect(() => {
-                const account = localStorage.getItem('account');
-                if(account){
-                    fetch(demo.api+'user/info/'+account,{
-                      method: 'GET',
-                      headers: {
-                          'Content-Type': 'application/json'
-                        }
-                      }).then(response => response.json())
-                      .then((Data) => {
-                          if(Data.success){
-                            setUser(Data.data);
-                          }
-                      })
-                      .catch((err) => {
-                      console.log(err.message);
-                      });
-                }
-}, []);
  
 return (
 <>
@@ -53,8 +32,8 @@ return (
                 &nbsp;&nbsp;&nbsp;&nbsp;
               </Nav>
               <Nav>
-                {user ? 
-                <Profile image={demo.media+user.photo} name={user.first_name}/>:
+                {props.user ? 
+                <Profile image={demo.media+props.user.photo} name={props.user.first_name}/>:
                 <LoginButton/>}
               </Nav>
             </Navbar.Collapse>

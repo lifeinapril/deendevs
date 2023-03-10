@@ -3,7 +3,7 @@
 "sub":"Developers",
 "slogan":"We care about the security of your indentity and data",
 "api":"https://deendevs.com/api/",
-"authurl":"https://deendevs.com/auth?callback=https://deendevs.com/",
+"authurl":"https://deendevs.com/auth",
 "token":"",
 "contacts":{
     "phone":"+234 906 529 1086",

@@ -8,11 +8,10 @@ import Box from '../components/Items/Box';
 import Title from '../components/Sections/Title';
 
 
-class Cloud extends React.Component {
-  render() {
+function Cloud(props) {
         return (
             <>
-            <HeadBar dark={true} name="Cloud" icon={demo.icon_white}/>
+            <HeadBar dark={true} user={props.user} icon={demo.icon_white}/>
             <Title name="Apps" variant="light" image={demo.cloud.image} />
              <Feature
                     align="text-center"
@@ -28,8 +27,6 @@ class Cloud extends React.Component {
             <Foot contacts={demo.contacts} services={demo.services} bg="bg-dark" name={demo.name} icon={demo.icon}/>
            </>
         );
-    }
-
 }
 
 export default Cloud;
