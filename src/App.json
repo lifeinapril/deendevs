@@ -2,8 +2,8 @@
 "name":"DeenDevs",
 "sub":"Developers",
 "slogan":"We care about the security of your indentity and data",
-"api":"http://localhost:8000/api/",
-"authurl":"http://localhost:7000/auth",
+"api":"https://deendevs.com/api/",
+"authurl":"https://deendevs.com/auth",
 "token":"",
 "contacts":{
     "phone":"+234 906 529 1086",
