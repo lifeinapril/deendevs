@@ -60,7 +60,7 @@ function Login(props) {
             />
             <br/>
             <h3><b>Sign In</b></h3>
-            <h5>Not registered yet? <a onClick={() => auth("register")} className="link-primary"> Sign Up</a></h5>
+            <b>Not registered yet? <a onClick={() => auth("register")} className="link-primary"> Sign Up</a></b>
            
             {error ? <small style={{color:"red"}}>{error}</small>:null}
             <Form.Group className="mb-3">
