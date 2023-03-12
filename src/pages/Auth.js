@@ -15,26 +15,22 @@ function Auth() {
     const navigate = useNavigate();
 
       useEffect(() => {
-        if(window.gapi){
-         window.gapi.load('auth2', function() {
-            window.gapi.auth2.init({
-            client_id: '609843450228-sit635nrrbcqbi1ql68gkjluiohn4055.apps.googleusercontent.com'
-            });
-        });
-        }
-        const account = localStorage.getItem('account');
+        const token=localStorage.getItem('account');
+          if(window.gapi){
+              window.gapi.load('auth2', function() {
+                  window.gapi.auth2.init({
+                  client_id: '609843450228-sit635nrrbcqbi1ql68gkjluiohn4055.apps.googleusercontent.com'
+                  });
+              });
+          }
           if(state){
             setAuth(state);
           }
-          if(account){
-            if(callback){
-              const url=callback+account;
-              console.log(url);
-                navigate(url);
-             }else{
-                navigate("/");
-            }
-         }
+          if(token){
+            setTimeout(function(){
+              navigate(callback+token);
+            },1000);
+          }            
         }, []);
    
 
@@ -56,8 +52,8 @@ function Auth() {
                                 <Col md={3} lg={3} sm={false} xs={false}>  
                                 </Col>
                                 <Col md={6} lg={6} sm={12} xs={12}>  
-                                  {AuthPage==="login" ? <Login Auth={setAuth} googleAuth={onSignIn}/>:null} 
-                                  {AuthPage==="register" ? <Register  Auth={setAuth} googleAuth={onSignIn} />:null}
+                                  {AuthPage==="login" ? <Login callback={callback} Auth={setAuth} googleAuth={onSignIn}/>:null} 
+                                  {AuthPage==="register" ? <Register callback={callback}  Auth={setAuth} googleAuth={onSignIn} />:null}
                                   {AuthPage==="reset" ? <Reset  Auth={setAuth} googleAuth={onSignIn} />:null}
                                   </Col> 
                                 <Col md={2} lg={2} sm={false} xs={false}>  

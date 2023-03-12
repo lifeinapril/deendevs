@@ -2,6 +2,7 @@
 import React,{useState} from "react";
 import demo from "../Config";
 import { Button,Spinner,Form,Row,Col} from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import "../css/Auth.css";
 
 function Register(props) {
@@ -11,6 +12,7 @@ function Register(props) {
     const [username, setUsername] = useState('');
     const [error, setError] = useState('');
     const [isLoading, startLoader] = useState(false);
+    const navigate = useNavigate();
 
 
     var auth = (value) => {
@@ -32,7 +34,7 @@ function Register(props) {
                     if(Data.success){
                         localStorage.setItem('account',Data.token);
                         setTimeout(function(){
-                            window.location.reload();
+                            navigate(props.callback+Data.token);
                         },1000);
                     }else{
                         setError(Data.message);
