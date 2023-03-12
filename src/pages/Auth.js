@@ -15,7 +15,6 @@ function Auth() {
     const navigate = useNavigate();
 
       useEffect(() => {
-        const token=localStorage.getItem('account');
           if(window.gapi){
               window.gapi.load('auth2', function() {
                   window.gapi.auth2.init({
@@ -26,11 +25,6 @@ function Auth() {
           if(state){
             setAuth(state);
           }
-          if(token){
-            setTimeout(function(){
-              navigate(callback+token);
-            },1000);
-          }            
         }, []);
    
 
