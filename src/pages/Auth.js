@@ -8,11 +8,12 @@ import Reset from "./Reset";
 
 function Auth() {
   const [AuthPage, setAuth] = useState("login");
+  const [callback_url, setUrl] = useState("https://deendevs.com/");
     const { search } = useLocation();
     const params = new URLSearchParams(search);
     const callback = params.get('callback');
     const state = params.get('state');
-    const navigate = useNavigate();
+
 
       useEffect(() => {
           if(window.gapi){
@@ -24,6 +25,9 @@ function Auth() {
           }
           if(state){
             setAuth(state);
+          }
+          if(callback){
+            setUrl(callback);
           }
         }, []);
    
@@ -46,8 +50,8 @@ function Auth() {
                                 <Col md={3} lg={3} sm={false} xs={false}>  
                                 </Col>
                                 <Col md={6} lg={6} sm={12} xs={12}>  
-                                  {AuthPage==="login" ? <Login callback={callback} Auth={setAuth} googleAuth={onSignIn}/>:null} 
-                                  {AuthPage==="register" ? <Register callback={callback}  Auth={setAuth} googleAuth={onSignIn} />:null}
+                                  {AuthPage==="login" ? <Login callback={callback_url} Auth={setAuth} googleAuth={onSignIn}/>:null} 
+                                  {AuthPage==="register" ? <Register callback={callback_url}  Auth={setAuth} googleAuth={onSignIn} />:null}
                                   {AuthPage==="reset" ? <Reset  Auth={setAuth} googleAuth={onSignIn} />:null}
                                   </Col> 
                                 <Col md={2} lg={2} sm={false} xs={false}>  
