@@ -49,7 +49,6 @@ function Register(props) {
 
   return (
     <>
-     <div className="Auth-form">
         <Form onSubmit={register}>
             <img
                 alt="logo"
@@ -59,16 +58,14 @@ function Register(props) {
             <br/>
             <h3><b>Register</b></h3>
             {error ? <small style={{color:"red"}}>{error}</small>:null}
-            <Row>
-            <Form.Group as={Col} md={6} sm={12}>
+            <Form.Group>
                 <Form.Label>First name</Form.Label>
                 <Form.Control type="text" className="form-control" disabled={isLoading} value={firstname} onChange={e => setFirstName(e.target.value)} placeholder="First name"/>
             </Form.Group>
-            <Form.Group as={Col}  md={6}  sm={12}>
+            <Form.Group>
                 <Form.Label>Last name</Form.Label>
                 <Form.Control type="text" className="form-control" disabled={isLoading} value={lastname} onChange={e => setLastName(e.target.value)} placeholder="Last name"/>
             </Form.Group>
-            </Row>
             <Form.Group className="mb-3">
                 <Form.Label>Nickname</Form.Label>
                 <Form.Control type="text" className="form-control mt-1" disabled={isLoading} value={username} onChange={e => setUsername(e.target.value)} placeholder="Example: aeby, jared, whitelion"/>
@@ -94,8 +91,8 @@ function Register(props) {
         </Form>
 
         <button className="loginBtn loginBtn--google" onClick={() => window.gapi.auth2.getAuthInstance().signIn()}>
-                    Continue with Google
-                </button>
+        Continue with Google
+        </button>
 
         <div className="text-center padding">
 
@@ -103,7 +100,6 @@ function Register(props) {
                 Already have an account? <a onClick={() => auth("login")} className="link-primary">click here</a>
                 </p>
         </div>
-    </div>
                   
     </>
   )
